@@ -12,38 +12,38 @@ public class AboutConditionals {
 	public void basicIfWithoutCurly(){
 		// Ifs without curly braces are ugly and not recommended but still valid:
 		int x = 1;
-		if (true) 
+		if (true)
 			x++;
-		assertEquals(x, __);
+		assertEquals(x, 2);
 	}
-	
+
 	@Koan
 	public void basicIfElseWithoutCurly(){
 		// Ifs without curly braces are ugly and not recommended but still valid:
 		int x = 1;
 		boolean secretBoolean = false;
-		if (secretBoolean) 
+		if (secretBoolean)
 			x++;
 		else
 			x--;
-		assertEquals(x, __);
+		assertEquals(x, 0);
 	}
-	
+
 	@Koan
 	public void basicIfElseIfElseWithoutCurly(){
 		int x = 1;
 		boolean secretBoolean = false;
 		boolean otherBooleanCondition = true;
 		// Ifs without curly braces are ugly and not recommended but still valid:
-		if (secretBoolean) 
+		if (secretBoolean)
 			x++;
 		else if (otherBooleanCondition)
 			x = 10;
 		else
 			x--;
-		assertEquals(x, __);
+		assertEquals(x, 10);
 	}
-	
+
 	@Koan
 	public void nestedIfsWithoutCurlysAreReallyMisleading() {
 		// Why are these ugly you ask? Well, try for yourself
@@ -55,9 +55,9 @@ public class AboutConditionals {
 			if (otherBooleanCondition) x = 10;
 		else x--;
 		// Where does this else belong to!?
-		assertEquals(x, __);
+		assertEquals(x, 10);
 	}
-	
+
 	@Koan
 	public void ifAsIntended() {
 		boolean secretBoolean = true;
@@ -69,10 +69,10 @@ public class AboutConditionals {
 		}
 		// There are different opinions on where the curly braces go...
 		// But as long as you put them here. You avoid problems as seen above.
-		assertEquals(x, __);
-	} 
-	
-	@Koan 
+		assertEquals(x, 2);
+	}
+
+	@Koan
 	public void basicSwitchStatement() {
 		int i = 1;
 		String result = "Basic ";
@@ -86,10 +86,10 @@ public class AboutConditionals {
 			default:
 				result += "Nothing";
 		}
-		assertEquals(result, __);
+		assertEquals(result, "Basic One");
 	}
-	
-	@Koan 
+
+	@Koan
 	public void switchStatementFallThrough() {
 		int i = 1;
 		String result = "Basic ";
@@ -101,10 +101,10 @@ public class AboutConditionals {
 			default:
 				result += "Nothing";
 		}
-		assertEquals(result, __);
+		assertEquals(result, "Basic OneTwoNothing");
 	}
-	
-	@Koan 
+
+	@Koan
 	public void switchStatementCrazyFallThrough() {
 		int i = 5;
 		String result = "Basic ";
@@ -116,10 +116,10 @@ public class AboutConditionals {
 			case 2:
 				result += "Two";
 		}
-		assertEquals(result, __);
+		assertEquals(result, "Basic NothingTwo");
 	}
-	
-	@Koan 
+
+	@Koan
 	public void switchStatementConstants() {
 		int i = 5;
 		// What happens if you remove the 'final' modifier?
@@ -133,10 +133,10 @@ public class AboutConditionals {
 			default:
 				result += "Nothing";
 		}
-		assertEquals(result, __);
+		assertEquals(result, "Basic Nothing");
 	}
-	
-	@Koan 
+
+	@Koan
 	public void switchStatementSwitchValues() {
 		// Try different (primitive) types for 'c'
 		// Which types do compile?
@@ -150,6 +150,6 @@ public class AboutConditionals {
 			default:
 				result += "Nothing";
 		}
-		assertEquals(result, __);
+		assertEquals(result, "Basic One");
 	}
 }

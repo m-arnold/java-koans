@@ -10,18 +10,18 @@ public class AboutConstructors {
 	class A {
 		String someString = "a";
 		public A() { someString += "x"; }
-		
+
 	}
-	
+
 	class B extends A {
 		public B() { someString += "g"; };
 	}
-	
+
 	@Koan
 	public void simpleConstructorOrder(){
-		assertEquals(new B().someString, __);
+		assertEquals(new B().someString, "axg");
 	}
-	
+
 	class Aa {
 		String someString = "a";
 		public Aa() { someString += "x"; }
@@ -29,14 +29,14 @@ public class AboutConstructors {
 			someString += s;
 		}
 	}
-	
+
 	class Bb extends Aa {
 		public Bb() { super("Boo"); someString += "g"; };
 	}
-	
+
 	@Koan
 	public void complexConstructorOrder(){
-		assertEquals(new Bb().someString, __);
+		assertEquals(new Bb().someString, "aBoog");
 	}
-	
+
 }
